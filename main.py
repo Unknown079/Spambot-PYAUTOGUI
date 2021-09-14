@@ -1,12 +1,13 @@
 import time
 import pyautogui as pg
 
-user = pg.prompt("Enter the amount of times..", "SPAMBOT")
-x = pg.prompt("Type something: (You'll have 5 seconds time)\n", "SPAMBOT")
-time.sleep(5)
+def main():
+    number = pg.prompt("Amount of times you wanna spam..", "SPAMBOT")
+    spam = pg.prompt("Type something (You'll have 5 seconds): ", "SPAMBOT")
+    time.sleep(5)
 
-for i in range(int(user)):
-    ban = x
-    pyautogui.write(ban)
-    pyautogui.press("enter")
-    
+    for i in range(int(number)):
+        pg.write(str(spam))
+        pg.press("enter")
+
+main()
